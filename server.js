@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
@@ -28,6 +30,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/todos', require('./src/routes/todos'))
+app.use('/auth', require('./src/routes/auth'))
 
 // Lancement de l'API
 app.listen(port, () => {
